@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+a {text-align: center;}
+div {text-align: center;}
+</style>
+</head>
+<body>
+
+<body><p>Launch Fullscreen?</p>
+<button style="background: gray;">Click me!</button>
+
+<script>
+    var urlObj = new window.URL(window.location.href);
+    var url = "YOUR GAME URL";
+
+    if (url) {
+        var win;
+
+        document.querySelector('button').onclick = function() {
+            if (win) {
+                win.focus();
+            } 
+            else {
+                win = window.open();
+                win.document.body.style.margin = '0';
+                win.document.body.style.height = '100vh';
+                var iframe = win.document.createElement('iframe');
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.margin = '0';
+                iframe.src = url;
+                win.document.body.appendChild(iframe);
+            }
+            document.querySelector('button').style.background='#ff5148';
+            document.querySelector('button').innerHTML="Reload Page!";
+        };
+    }
+</script>
+<style>
+* {
+    color: white; 
+    font-family: arial;
+    text-align: center;
+}
+button {
+    width: 220px; 
+    height: 40px;
+    border-radius: 12px;
+    background-color: #ab6afb;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    transition: background-color 500ms;
+}
+button:hover {
+    background-color: #BB86FC;
+}
+</style>
+
+<!-- Extra -->
+<style>
+    html {
+        background-color: black;
+    }
+</style>
+</body>
+<div><a style="color:gray;" href="https://betalinks.ga" >Made By Niko</a></div>
+</body>
+</html>
